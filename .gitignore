@@ -1,5 +1,86 @@
-*.class
+# IntelliJ IDEA specific files
+ScalaProject/.idea/
+*.iml
+*.iws
+
+ScalaProject/.idea_modules/
+
+# IntelliJ run and debug logs
+/out/
 *.log
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Ignore MacOS .DS_Store files
+.DS_Store
+
+# Build directories
+
+ScalaProject/target/
+ScalaProject/project/target/
+ScalaProject/project/project/
+
+# Compiled class files
+*.class
+
+# Scala build tool directories and files
+.sbt/
+.history/
+*.log
+.sbt/.lock
+
+# Maven specific files
+
+ScalaProject/pom.xml.tag
+
+ScalaProject/pom.xml.releaseBackup
+
+ScalaProject/pom.xml.versionsBackup
+
+ScalaProject/pom.xml.next
+
+ScalaProject/release.properties
+
+# Gradle specific files
+.gradle/
+
+ScalaProject/build/
+
+# Ignore dependency cache
+
+ScalaProject/lib_managed/
+
+ScalaProject/src_managed/
+
+ScalaProject/node_modules/
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Packages
+*.jar
+*.war
+*.ear
+
+# OS generated files
+Thumbs.db
+
+# IDEA Workspace file
+
+ScalaProject/workspace.xml
+
+# Coverage report files
+coverage/
+*.coverage
+
+# Exclude personal config
+*.conf
+*.properties
+
+# Generated code files
+*.generated
+
+# Exclude Play Framework generated files
+.cache/
