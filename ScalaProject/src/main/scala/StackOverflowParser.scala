@@ -48,15 +48,16 @@ object StackOverflowParser {
     val topTags = df.groupBy("tag").count().orderBy(desc("count"))
     topTags.show()
 
-    val top5Score = spark.sql(
-      """
-        |SELECT tag, score
-        |FROM df
-        |ORDER BY score DESC
-        |LIMIT 5
-        |""".stripMargin
-    )
+    val top5Score =
+      df.groupBy("tag")
+        .agg(avg("score").as("avg_score"))
+        .orderBy(desc("avg_score"))
+        .limit(5)
     top5Score.show()
+
+    df.createOrReplaceTempView("stackoverflow")
+    val sqlDF = spark.sql("SELECT * FROM stackoverflow WHERE score > 100")
+    sqlDF.show()
 
     spark.stop()
   }
