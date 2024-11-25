@@ -3,6 +3,8 @@ ScalaProject/.idea/
 *.iml
 *.iws
 
+ScalaProject/data/cve/*
+
 ScalaProject/.idea_modules/
 
 # IntelliJ run and debug logs
